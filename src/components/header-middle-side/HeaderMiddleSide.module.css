@@ -1,0 +1,419 @@
+.header {
+  width: 98%;
+  height: 90vh;
+
+  position: relative;
+}
+.masked-header {
+  width: 100%;
+  height: 90vh;
+  border: #0e0e0e solid 1px;
+
+  background-image: url("/wahj-company-website/assets/h.webp");
+  background-position: 0%;
+  background-size: cover;
+  background-attachment: scroll;
+  background-repeat: no-repeat;
+  border-radius: 25px;
+  position: relative;
+  mask: url("/wahj-company-website/assets/top-right.svg") center / contain
+      no-repeat,
+    url("/wahj-company-website/assets/top-left.svg") center / contain no-repeat,
+    url("/wahj-company-website/assets/bottom-left.svg") center / contain
+      no-repeat,
+    url("/wahj-company-website/assets/top-left-mobile.svg") center / contain
+      no-repeat,
+    url("/wahj-company-website/assets/bottom-right-mobile.svg") center / contain
+      no-repeat,
+    linear-gradient(#000000 0 0);
+  mask-size: 13%, 13%, 7%, 0rem, 0rem;
+  mask-position: top right, top left, bottom left, top left, bottom right;
+  mask-composite: exclude;
+}
+
+.masked-header .background {
+  position: absolute;
+  right: 25%;
+  bottom: -8%;
+  width: 50%;
+  /* height: 155%; */
+  z-index: -5;
+  animation: floating 3s ease-in-out infinite;
+}
+
+@keyframes floating {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.header .sun {
+  position: absolute;
+  bottom: 1.5%;
+  left: 0.5%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 4%;
+  height: 7%;
+  animation: sun-spin 10s linear infinite;
+}
+@keyframes sun-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.masked-header .header-text {
+  position: absolute;
+  width: 40%;
+  top: 36%;
+  left: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+  z-index: 1;
+  gap: 5px;
+  /* border: 1px solid red; */
+  animation: floating 3s ease-in-out infinite;
+}
+
+.horizontal-line {
+  width: 60%;
+  height: 2px;
+  background-color: white;
+  margin-bottom: 15px;
+}
+
+.masked-header .header-text h1 {
+  font-size: 42px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  /* margin-bottom: 20px; */
+  text-align: center;
+}
+
+.masked-header .header-text h1 span {
+  color: #fbbd08;
+  font-weight: 500;
+  margin-bottom: 20px;
+  text-decoration: underline #9747ff solid 4px;
+}
+
+.masked-header .header-text p {
+  font-size: 16px;
+  font-weight: 400;
+  text-align: center;
+}
+
+/* .logo-container {
+  position: absolute;
+  top: 2%;
+  left: 3%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  width: 5%;
+  height: 40px;
+}
+
+.logo-container .logo-link {
+  width: 100%;
+  border-radius: 50%;
+
+  height: 100%;
+}
+
+.logo-container .logo-link .logo {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+} */
+
+.logo-container {
+  position: absolute;
+  top: 2%;
+  left: 2%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  z-index: 1000;
+  width: 6%;
+  height: 45px;
+}
+
+.logo-link {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  text-decoration: none;
+  height: 100%;
+}
+
+.logo {
+  height: 90%;
+  width: 100%;
+}
+
+.logo-container .logo-text {
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: white;
+}
+
+.contact-button {
+  width: 9%;
+  height: max-content;
+  position: absolute;
+  top: 2%;
+  right: 1%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.3% 0.7% 0.3% 0.3%;
+  border: 1px solid #717171;
+  border-radius: 30px;
+  background-color: #000;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.contact-button:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+.contact-text {
+  width: 60%;
+  font-size: 90%;
+  font-weight: 400;
+  text-align: center;
+  font-size: 12px;
+}
+
+.contact-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  background-color: #fbbd08;
+  border-radius: 50%;
+  font-size: 1.1rem;
+  color: #ffffff;
+}
+
+/* Ipad Screen */
+@media (max-width: 992px) {
+  .masked-header {
+    mask-size: 1rem, 0rem, 0rem, 18%, 9%;
+  }
+
+  .masked-header .background {
+    position: absolute;
+    right: 10%;
+    bottom: -4%;
+    width: 80%;
+    height: auto;
+    z-index: -5;
+  }
+
+  .header .sun {
+    left: unset;
+    bottom: 0%;
+    right: 0%;
+
+    width: 6%;
+    height: 6%;
+  }
+  .masked-header .header-text {
+    width: 100%;
+    left: 0%;
+    align-items: center;
+    color: black;
+    animation: none;
+  }
+  .horizontal-line {
+    width: 80%;
+    color: #000;
+    background-color: #000;
+  }
+
+  .masked-header .header-text h1 {
+    font-size: 30px;
+    text-align: center;
+  }
+
+  .masked-header .header-text p {
+    font-size: 22px;
+    text-align: center;
+  }
+
+  .contact-button {
+    width: 20%;
+    top: 53%;
+    right: 40%;
+    background-color: transparent;
+    color: black;
+  }
+
+  .logo-container {
+    left: 1%;
+    top: 2%;
+    /* width: 4.5%; */
+  }
+
+  .logo-container .logo {
+    width: 100%;
+  }
+
+  .logo-container .logo-text {
+    display: flex;
+  }
+}
+
+@media (max-width: 440px) {
+  .masked-header {
+    mask-size: 1px, 0rem, 0rem, 40%, 22%;
+  }
+
+  .masked-header .background {
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+    width: 100%;
+    height: auto;
+  }
+
+  .header .sun {
+    left: unset;
+    bottom: 0.2%;
+    right: 1%;
+
+    width: 11%;
+    height: 8%;
+  }
+  .masked-header .header-text {
+    width: 100%;
+    left: 0%;
+    align-items: center;
+    color: black;
+  }
+  .horizontal-line {
+    width: 80%;
+    color: #000;
+    background-color: #000;
+  }
+
+  .masked-header .header-text h1 {
+    font-size: 28px;
+    text-align: center;
+  }
+
+  .masked-header .header-text p {
+    font-size: 14px;
+    text-align: center;
+  }
+
+  .logo-container {
+    left: 18%;
+    top: 2%;
+    width: 10%;
+  }
+
+  .logo-container .logo {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .logo-container .logo-text {
+    display: none;
+  }
+}
+
+/* Landscape Orientation */
+@media (orientation: landscape) and (max-height: 440px) {
+  .masked-header {
+    mask-size: 1px, 0px, 0px, 16%, 7%;
+  }
+
+  .masked-header .background {
+    position: absolute;
+    right: -9%;
+    bottom: 0%;
+    width: 60%;
+    height: auto;
+  }
+
+  .header .sun {
+    left: unset;
+    right: -2%;
+    bottom: 1%;
+    width: 8%;
+    height: 8%;
+  }
+
+  .masked-header .header-text {
+    width: 55%;
+    left: 1%;
+    align-items: center;
+    /* border: 1px solid red; */
+  }
+
+  .horizontal-line {
+    width: 90%;
+  }
+
+  .masked-header .header-text h1 {
+    font-size: 26px;
+    text-align: center;
+  }
+
+  .masked-header .header-text p {
+    font-size: 16px;
+    text-align: center;
+  }
+
+  .contact-button {
+    width: 20%;
+    top: unset;
+    right: unset;
+    bottom: 10%;
+    left: 17%;
+    /* background-color: #000; */
+    color: black;
+  }
+
+  .logo-container {
+    left: 1%;
+    top: 3%;
+    width: 10%;
+    height: 10%;
+    /* border: 1px solid red; */
+  }
+
+  .logo-container .logo {
+    /* width: 100%; */
+    height: 100%;
+  }
+
+  .logo-container .logo-text {
+    font-size: 1.2rem;
+  }
+}

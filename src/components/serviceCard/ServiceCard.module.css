@@ -1,0 +1,116 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.card {
+  flex-basis: 30%;
+  max-width: 465px;
+  height: 440px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #6b6b6b;
+  fill: none;
+  position: relative;
+  clip-path: path(
+    "M471.179 20C471.179 8.9543 462.225 0 451.179 0H85.0523C74.0066 0 65.0523 8.9543 65.0523 20V41C65.0523 52.0457 56.098 61 45.0523 61H20C8.9543 61 0 69.9543 0 81V497C0 508.046 8.95432 517 20 517H451.179C462.225 517 471.179 508.046 471.179 497V20Z"
+  );
+  border-radius: 10px;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  right: 2px;
+  bottom: 2px;
+  background-color: #0e0e0e;
+  z-index: -1;
+  clip-path: path(
+    "M471.179 20C471.179 8.9543 462.225 0 451.179 0H85.0523C74.0066 0 65.0523 8.9543 65.0523 20V41C65.0523 52.0457 56.098 61 45.0523 61H20C8.9543 61 0 69.9543 0 81V497C0 508.046 8.95432 517 20 517H451.179C462.225 517 471.179 508.046 471.179 497V20Z"
+  );
+  border-radius: 10px;
+  transition: all 0.3s ease-in-out;
+}
+
+.card:hover {
+  background-color: #f8e051;
+}
+
+.card-icon {
+  width: 225px;
+  height: 245px;
+  filter: drop-shadow(0 0 35px rgba(255, 255, 255, 0.4));
+  z-index: 1;
+  transition: all 0.3s ease-in-out;
+}
+.card:hover .card-icon {
+  opacity: 0;
+}
+
+.card-title {
+  color: white;
+  font-size: 28px;
+  font-weight: 500;
+  text-align: center;
+  z-index: 1;
+  transition: all 0.3s ease-in-out;
+}
+
+.card:hover .card-title {
+  transform: translateY(-250px);
+  color: #f8e051;
+}
+
+.card-description {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 30px;
+  padding: 35% 30px 20px 30px;
+  font-size: 1rem;
+  text-align: justify;
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+  z-index: 0;
+}
+
+.card:hover .card-description {
+  opacity: 1;
+}
+
+@media (max-width: 992px) {
+  .card {
+    flex-basis: 45%;
+  }
+  .card-icon {
+    width: 200px;
+    height: 220px;
+  }
+  .card-title {
+    font-size: 24px;
+  }
+  .card-description {
+    padding: 30% 20px 10px 20px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 440px) {
+  .card {
+    flex-basis: 350px;
+  }
+}
